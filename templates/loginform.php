@@ -1,6 +1,8 @@
 <?php
 
 // Set default scenario if isn't set
+use SimpleSAML\Module;
+
 if (!empty($this->data['authProcFilterScenario']))
 {
     if (empty($this->data['username']))
@@ -47,7 +49,7 @@ if (strlen($this->data['username']) > 0)
 }
 
 $this->data['head'] .= '<link rel="stylesheet" href="'
-    . htmlspecialchars(SimpleSAML_Module::getModuleUrl('privacyidea/css/loginform.css'), ENT_QUOTES)
+    . htmlspecialchars(Module::getModuleUrl('privacyidea/css/loginform.css'), ENT_QUOTES)
     . '" media="screen" />';
 
 $this->includeAtTemplateBase('includes/header.php');
@@ -274,10 +276,10 @@ if (!empty($this->data['links']))
 }
 ?>
 
-    <script src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleUrl('privacyidea/js/webauthn.js'), ENT_QUOTES) ?>">
+    <script src="<?php echo htmlspecialchars(Module::getModuleUrl('privacyidea/js/webauthn.js'), ENT_QUOTES) ?>">
     </script>
 
-    <script src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleUrl('privacyidea/js/u2f-api.js'), ENT_QUOTES) ?>">
+    <script src="<?php echo htmlspecialchars(Module::getModuleUrl('privacyidea/js/u2f-api.js'), ENT_QUOTES) ?>">
     </script>
 
     <meta id="privacyidea-step" name="privacyidea-step" content="<?php echo $this->data['step'] ?>">
@@ -299,7 +301,7 @@ if (!empty($this->data['links']))
     echo htmlspecialchars(json_encode($translations));
     ?>">
 
-    <script src="<?php echo htmlspecialchars(SimpleSAML_Module::getModuleUrl('privacyidea/js/loginform.js'), ENT_QUOTES) ?>">
+    <script src="<?php echo htmlspecialchars(Module::getModuleUrl('privacyidea/js/loginform.js'), ENT_QUOTES) ?>">
     </script>
 
 <?php

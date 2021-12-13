@@ -8,7 +8,7 @@ class Logger implements PILog
      */
     public function piDebug($message)
     {
-        SimpleSAML_Logger::debug($message);
+        SimpleSAML\Logger::debug($message);
     }
 
     /**
@@ -17,6 +17,6 @@ class Logger implements PILog
      */
     public function piError($message)
     {
-        SimpleSAML_Logger::error($message);
+        SimpleSAML\Logger::error($message);
     }
 }
